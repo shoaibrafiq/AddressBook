@@ -7,9 +7,11 @@ use App\Contact;
 
 class ContactsController extends Controller
 {
-    public function home(){
-    	$contacts = Contact::all();
-    	return view('home', ['contacts' => $contacts]);
+    public function home(Request $request){
+    	
+    $contacts=Contact::orderBy('created_at', 'desc')->paginate(100);
+    return view('home',compact('contacts'));
+    
     }
 
     public function add(Request $request){
@@ -35,7 +37,7 @@ class ContactsController extends Controller
 
     public function update($id){
     	$contacts = Contact::find($id);
-    	return view('update', ['contacts' => $contacts]);
+    	return view('update',compact('contacts'));
     }
 
     public function edit(Request $request, $id){
@@ -61,7 +63,7 @@ class ContactsController extends Controller
 
     public function read($id){
     	$contacts = Contact::find($id);
-    	return view('read', ['contacts' => $contacts]);
+    	return view('read',compact('contacts'));
     }
 
     public function delete($id){
