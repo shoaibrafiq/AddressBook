@@ -58,4 +58,9 @@ class ContactsController extends Controller
     	->update($data);
     	return redirect('/')->with('info', 'Contact Updated Successfully!');
     }
+
+    public function read($id){
+    	$contacts = Contact::find($id);
+    	return view('read', ['contacts' => $contacts]);
+    }
 }

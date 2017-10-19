@@ -7,15 +7,16 @@
       <div class="row">
       <form role="form" method="POST" action="{{ url('/edit', array($contacts->id)) }}">
         {{ csrf_field() }}
-        <div class="col-lg-6 col-md-6">
-          <div class="form-group">
-            @if(count($errors) >0 )
+              @if(count($errors) >0 )
                 @foreach($errors->all() as $error)
                   <div class="alert alert-danger">
                    {{$error}}
                   </div>
-                @endforeach
-              @endif
+                  @endforeach
+                @endif
+        <div class="col-lg-6 col-md-6">
+          <div class="form-group">
+            
             <input type="text" name="firstname" class="form-control" value="<?php echo $contacts->firstname; ?>" placeholder="First Name">
           </div>
         </div>
