@@ -63,4 +63,10 @@ class ContactsController extends Controller
     	$contacts = Contact::find($id);
     	return view('read', ['contacts' => $contacts]);
     }
+
+    public function delete($id){
+    	Contact::where('id', $id)
+    	->delete();
+    	return redirect('/')->with('info', 'Contact Deleted Successfully!');
+    }
 }

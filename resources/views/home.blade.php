@@ -30,7 +30,7 @@
                             <div class="col-4 pull-right" style="text-align:right">
                               <a href='{{ url("/read/$contact->id") }}' class="btn btn-default">View</a>
                               <a href='{{ url("/update/$contact->id") }}' class="btn btn-primary">Edit</a> 
-                              <a href="" class="btn btn-danger">Delete</a>
+                              <a href='{{ url("/delete/$contact->id") }}' class="btn btn-danger">Delete</a>
                            </div>
                             <span class="fa fa-map-marker fa-fw text-muted" data-toggle="tooltip" title=""></span>
                             <span class="text-muted">{{ $contact->address }}</span>

@@ -16,7 +16,7 @@
                         <div class="col-12 col-sm-6 col-md-9">
              
                           <label class="name lead">{{ $contacts->firstname }}</label>
-							<label class="name lead">{{ $contacts->lastname }}</label><br>
+						  <label class="name lead">{{ $contacts->lastname }}</label><br>
                             <span class="fa fa-map-marker fa-fw text-muted" data-toggle="tooltip" title=""></span>
                             <span class="text-muted">{{ $contacts->address }}</span>
                             <br>
@@ -29,10 +29,10 @@
                         </div>
                        
                     </div><br>
-       <div class="panel-footer">
-        <a href="{{ url('/') }}" class="btn btn-default">Back</a>
-    
-        </div>
+			       <div class="panel-footer">
+			        <a href="{{ url('/') }}" class="btn btn-default">Back</a>
+			    
+			        </div>
                 </li>
               </ul>
             </div>
