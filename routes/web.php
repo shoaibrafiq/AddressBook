@@ -13,3 +13,9 @@
 
 
 Route::get('/', 'ContactsController@home');
+//Route::get('/create', 'ContactsController@home');
+Route::get('/create', function () {
+    return view('create');
+});
+
+Route::post('/insert', 'ContactsController@add');

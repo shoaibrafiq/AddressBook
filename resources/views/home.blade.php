@@ -1,5 +1,11 @@
 @extends('layout.main')
 @section('content')
+
+@if(session('info'))
+<div class="alert alert-success">
+  {{session('info')}}
+  </div>
+@endif
 <legend>My Contacts</legend>
 
 @if(count($contacts) > 0)
@@ -21,11 +27,11 @@
                             <label class="name lead">{{ $contact->firstname }}</label>
                             <label class="name lead">{{ $contact->lastname }}</label>
                             <br> 
-                             <div class="col-4 pull-right" style="text-align:right">
-                          <input type="submit" href="{{ url('') }}" class="btn btn-default" value="View"></input>
-                          <input type="submit" href="{{ url('') }}" class="btn btn-primary" value="Edit"></input> 
-                          <input type="submit" href="{{ url('') }}" class="btn btn-danger" value="Delete"></input>
-                        </div>
+                            <div class="col-4 pull-right" style="text-align:right">
+                              <a href="" class="btn btn-default">View</a>
+                              <a href="" class="btn btn-primary">Edit</a> 
+                              <a href="" class="btn btn-danger">Delete</a>
+                           </div>
                             <span class="fa fa-map-marker fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="5842 Hillcrest Rd"></span>
                             <span class="text-muted">{{ $contact->address }}</span>
                             <br>
