@@ -30,6 +30,32 @@ class ContactsController extends Controller
     	$contacts->address = $request->input('address');
     	$contacts->save();
 
-    	return redirect('/')->with('info', 'Contact Saved Successfully');
+    	return redirect('/')->with('info', 'Contact Saved Successfully!');
+    }
+
+    public function update($id){
+    	$contacts = Contact::find($id);
+    	return view('update', ['contacts' => $contacts]);
+    }
+
+    public function edit(Request $request, $id){
+
+    	$this->validate($request,[
+        'firstname' =>'required',
+        'lastname' =>'required',
+        'phone' =>'required',
+        'email' =>'required',
+        'address' =>'required'
+      ]);
+    	$data = array(
+    		'firstname' => $request->input('firstname'),
+    		'lastname' => $request->input('lastname'),
+    		'phone' => $request->input('phone'),
+    		'email' => $request->input('email'),
+    		'address' => $request->input('address')
+    		);
+    	Contact::where('id', $id)
+    	->update($data);
+    	return redirect('/')->with('info', 'Contact Updated Successfully!');
     }
 }

@@ -29,13 +29,13 @@
                             <br> 
                             <div class="col-4 pull-right" style="text-align:right">
                               <a href="" class="btn btn-default">View</a>
-                              <a href="" class="btn btn-primary">Edit</a> 
+                              <a href='{{ url("/update/$contact->id") }}' class="btn btn-primary">Edit</a> 
                               <a href="" class="btn btn-danger">Delete</a>
                            </div>
-                            <span class="fa fa-map-marker fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="5842 Hillcrest Rd"></span>
+                            <span class="fa fa-map-marker fa-fw text-muted" data-toggle="tooltip" title=""></span>
                             <span class="text-muted">{{ $contact->address }}</span>
                             <br>
-                            <span class="fa fa-phone fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="(870) 288-4149"></span>
+                            <span class="fa fa-phone fa-fw text-muted" data-toggle="tooltip" title=""></span>
                             <span class="text-muted small">{{ $contact->phone }}</span>
                             <br>
                             <span class="fa fa-envelope fa-fw text-muted" data-toggle="tooltip" data-original-title="" title=""></span>

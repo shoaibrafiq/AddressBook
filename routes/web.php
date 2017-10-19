@@ -19,3 +19,5 @@ Route::get('/create', function () {
 });
 
 Route::post('/insert', 'ContactsController@add');
+Route::get('/update/{id}', 'ContactsController@update');
+Route::post('/edit/{id}', 'ContactsController@edit');
